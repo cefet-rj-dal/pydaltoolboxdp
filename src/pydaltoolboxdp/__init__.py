@@ -7,6 +7,7 @@ the sibling R package ``daltoolboxdp`` via ``reticulate``.
 from .adversarial import AutoencAdvE, AutoencAdvEd
 from .autoencoder import AutoencDenoiseE, AutoencDenoiseEd, AutoencE, AutoencEd
 from .convolutional import AutoencConvE, AutoencConvEd
+from .events import HanAutoencoder, HcpWaypoint
 from .recurrent import AutoencLstmE, AutoencLstmEd
 from .stacked import AutoencStackedE, AutoencStackedEd
 from .supervised import SkclaGb, TorchClaMlp, TorchRegMlp
@@ -28,6 +29,8 @@ __all__ = [
     "AutoencStackedEd",
     "AutoencVariationalE",
     "AutoencVariationalEd",
+    "HanAutoencoder",
+    "HcpWaypoint",
     "SkclaGb",
     "TorchClaMlp",
     "TorchRegMlp",
@@ -35,4 +38,4 @@ __all__ = [
     "TsConv1D",
     "TsLstm",
 ]
-__version__ = "0.5.0"
+__version__ = "0.6.0"

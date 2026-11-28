@@ -35,5 +35,11 @@ Checklist por release:
 7. testar instalação da wheel em venv novo;
 8. somente após autorização: upload e verificação do endpoint versionado do PyPI.
 
+## Preparado localmente
+
+- `0.6.0` — adiciona `HanAutoencoder` e `HcpWaypoint`, com referências congeladas, gate
+  R↔Python e exemplos das 12 configurações Deep. Ainda precisa dos gates finais de build,
+  instalação isolada e pacote R antes de qualquer pedido de publicação.
+
 O pacote R compatível deve declarar uma versão mínima de pydaltoolboxdp. A matriz de
 compatibilidade R↔Python será registrada no README antes do primeiro release público.

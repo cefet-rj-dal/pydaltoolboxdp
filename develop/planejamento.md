@@ -5,15 +5,6 @@ correspondência R↔Python fica em `mapeamento.md`; o protocolo de validação,
 
 ## Roadmap incremental
 
-### 0.6.0 — harbinger deep
-
-- `HanAutoencoder` e `HcpWaypoint`, especializando `pyharbinger.Harbinger`;
-- ler integralmente a memória ativa de harbinger/pyharbinger antes de qualquer edição;
-- transferir 12 exemplos Deep ++ hoje no harbinger (2 HanrMl deep, 7 autoencoder, 3
-  Waypoint) e criar seus pares Python;
-- registrar toda intervenção nos `develop/{planejamento,historico,mapeamento,parity,
-  nextprompt}.md` do pyharbinger para não conflitar com seu ciclo em andamento.
-
 ### 0.7.0 — corte arquitetural e maturidade
 
 - zero `source_python`/`system.file("python", ...)` no R;

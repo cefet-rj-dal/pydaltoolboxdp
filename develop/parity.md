@@ -50,6 +50,8 @@ reduções podem variar. Toda tolerância deve vir acompanhada de evidência.
 | `torch_ts_mlp` → `TorchTsMlp` | bit a bit (`0.0`) | exato (`1e-7`) | loss, one-step, multi-step e seed | `test_timeseries.py`, `test_quality_timeseries.py` |
 | `ts_conv1d` → `TsConv1D` | exato (`1e-7`) | exato (`1e-7`) | loss, one-step, multi-step e seed | `test_timeseries.py`, `test_quality_timeseries.py` |
 | `ts_lstm` → `TsLstm` | bit a bit (`0.0`) | exato (`1e-7`) | loss, one-step, multi-step e seed | `test_timeseries.py`, `test_quality_timeseries.py` |
+| `han_autoencoder` → `HanAutoencoder` | exato (`1e-7`) | n/a | resíduos, limiar, eventos e seed | `test_events.py`, `test_quality_events.py` |
+| `hcp_waypoint` → `HcpWaypoint` | exato (`1e-7`) | n/a | resíduos, tau, drift e seed | `test_events.py`, `test_quality_events.py` |
 
 O backend denso foi apagado somente depois que os gates 1 e 2 ficaram verdes. A referência
 legada permanece congelada em `develop/parity/dense_ref.json`, e a ponte é exercitada por
@@ -67,3 +69,9 @@ o gate R conjunto está em `daltoolboxdp/develop/parity/supervised_reticulate.R`
 A referência das séries temporais está em `develop/parity/timeseries_ref.json`; o gate R
 conjunto está em `daltoolboxdp/develop/parity/timeseries_reticulate.R`. A diferença máxima
 do Conv1D legado foi um ULP (`5.96e-8`), dentro da tolerância exata adotada de `1e-7`.
+
+A referência dos detectores Deep está em `develop/parity/events_ref.json`; o gate conjunto
+R↔Python está em `develop/parity/events_reticulate.R`. Como os contratos R permanecem no
+harbinger e usam os autoencoders públicos do DP, o gate compara diretamente as duas
+orquestrações sobre o mesmo backend: diferenças máximas de `2.7e-15` (anomalias) e
+`1.5e-14` (Waypoint), com eventos e `tau` idênticos.

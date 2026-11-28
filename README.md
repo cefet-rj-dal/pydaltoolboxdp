@@ -9,8 +9,8 @@ classes. Python algorithms live here once; they are not duplicated inside the R
 package.
 
 The implemented vertical slices contain all seven encoder and encoder-decoder
-autoencoder families, tabular classification and regression, and time-series
-forecasting:
+autoencoder families, tabular classification and regression, time-series
+forecasting, and deep event detection:
 
 - `AutoencE`: transforms observations into their latent representation;
 - `AutoencEd`: reconstructs observations after encoding.
@@ -30,6 +30,8 @@ forecasting:
 - `TorchTsMlp`: sliding-window time-series forecasting with a dense PyTorch MLP;
 - `TsConv1D`: sliding-window forecasting with one-dimensional convolutions;
 - `TsLstm`: sliding-window forecasting with recurrent LSTM layers.
+- `HanAutoencoder`: reconstruction-based anomaly detection with any Deep ++ autoencoder;
+- `HcpWaypoint`: adaptive autoencoder/CUSUM change-point detection.
 
 ## Installation
 
@@ -64,3 +66,4 @@ extension layer. GPU use is optional; models run on CPU by default.
 | 0.3.x | development checkout | completes all 14 autoencoder classes |
 | 0.4.x | development checkout | adds tabular classification and regression |
 | 0.5.x | 1.3.767 from GitHub `main` | adds one-step and multi-step time-series forecasting |
+| 0.6.x | development checkout | adds deep anomaly and Waypoint change-point detection |

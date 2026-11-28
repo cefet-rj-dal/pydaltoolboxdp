@@ -151,3 +151,20 @@
 - A wheel pública 0.5.0 foi instalada sem cache em venv novo e os três modelos produziram
   previsões finitas. O daltoolboxdp foi instalado de `GitHub/main` em biblioteca R isolada e
   executou `torch_ts_mlp` via reticulate contra o pacote Python público.
+
+## Harbinger Deep — 0.6.0 local (2026-11-28)
+
+- Implementados `HanAutoencoder` e `HcpWaypoint` sobre `pyharbinger.Harbinger`, reutilizando
+  os sete encoder-decoders Deep ++ e o contrato de normalização do pytspredit.
+- `HanAutoencoder` preserva janelas, min-max global, soma do erro de reconstrução e pipeline
+  Harbinger de desvio/filtro/seleção; `HcpWaypoint` preserva warm-up, MSE, `tau`, buffer,
+  CUSUM bilateral, confirmação e retreinamento adaptativo.
+- O gate contra a orquestração R foi exato a `1e-7`: diferenças máximas `2.7e-15` e
+  `1.5e-14`, eventos Waypoint no mesmo índice e `tau` idêntico. Referências congeladas e
+  guardas ficaram em `develop/parity/events_ref.json` e `tests/test_quality_events.py`.
+- Criados e executados três notebooks Python que cobrem os 12 pares: dois `HanrMl` deep,
+  sete variantes de `HanAutoencoder` e três variantes de Waypoint.
+- Os 12 exemplos R, seus scripts e figuras foram transferidos do harbinger para o
+  daltoolboxdp; os contratos genéricos R permaneceram no pacote-base para compatibilidade.
+- A memória ativa de harbinger e pyharbinger foi atualizada antes/depois da intervenção.
+  O corte permanece local, sem publicação, commit ou push.

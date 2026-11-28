@@ -43,8 +43,8 @@ Legenda: ✅ implementado · 🔜 próximo · ⬜ planejado · 🗑 redundante/r
 
 | R `harbinger` | Python Deep ++ | Base | Status |
 |---|---|---|---|
-| `han_autoencoder` | `HanAutoencoder` | `Harbinger` | ⬜ 0.6.0 |
-| `hcp_waypoint` | `HcpWaypoint` | `Harbinger` | ⬜ 0.6.0 |
+| `han_autoencoder` | `HanAutoencoder` | `Harbinger` | ✅ 0.6.0 local (paridade exata) |
+| `hcp_waypoint` | `HcpWaypoint` | `Harbinger` | ✅ 0.6.0 local (paridade exata) |
 
 Os contratos/orquestrações genéricos permanecem no harbinger. Os modelos concretos e todos
 os exemplos que usam um backend Deep ++ pertencem a daltoolboxdp/pydaltoolboxdp.
