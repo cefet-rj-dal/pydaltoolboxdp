@@ -2,6 +2,13 @@
 
 Nenhuma publicação ocorre sem autorização explícita do Eduardo.
 
+## Publicações
+
+- `0.1.0` — publicada no PyPI em 2026-11-27 com autorização explícita; wheel e sdist
+  passaram por `twine check`, instalação sem cache e smoke test local.
+- `0.2.0` — publicada no PyPI em 2026-11-27 com autorização explícita; wheel e sdist
+  passaram por `twine check`, reinstalação pública sem cache e smoke test LSTM local.
+
 Checklist por release:
 
 1. atualizar versão em `pyproject.toml` e `src/pydaltoolboxdp/__init__.py`;

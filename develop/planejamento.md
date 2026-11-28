@@ -3,43 +3,7 @@
 Documento vivo: contém somente o que falta. O concluído vai para `historico.md`; a
 correspondência R↔Python fica em `mapeamento.md`; o protocolo de validação, em `parity.md`.
 
-## Arquitetura decidida
-
-`pydaltoolboxdp` é a **única implementação Python** da camada Deep ++. O pacote R
-`daltoolboxdp` mantém adaptadores S3 finos e importa estas classes via `reticulate`.
-Quando a migração terminar, `daltoolboxdp/inst/python` será removido.
-
-Deep ++ especializa os três contratos Python:
-
-- `pydaltoolbox`: autoencoders, classificação e regressão;
-- `pytspredit`: regressores por janela para séries temporais;
-- `pyharbinger`: detecção deep de anomalias e mudanças.
-
-Exemplos cuja classe concreta é Deep ++ pertencem somente a `daltoolboxdp` e
-`pydaltoolboxdp`, mesmo quando usam a orquestração de tspredit ou harbinger.
-
-## Estado atual — 0.1.0 validado localmente
-
-- ✅ scaffolding e metadados “Deep ++”;
-- ✅ infraestrutura PyTorch inicial compartilhada;
-- ✅ `AutoencE` e `AutoencEd` implementados sobre `AutoencBaseE/Ed`;
-- ✅ wrappers R migrados para a API pública, com paridade exata nos dois primeiros gates;
-- ✅ backend legado `inst/python/autoenc.py` removido depois dos gates verdes;
-- ✅ `AutoencDenoiseE/Ed` migrados com exemplos e os dois gates exatos;
-- 🔜 continuar 0.2.0 por `AutoencConvE/Ed`, mantendo um corte pequeno por família.
-
 ## Roadmap incremental
-
-### 0.1.0 — fundação e autoencoder denso
-
-Concluído localmente em 2026-11-27. A publicação continua pendente de autorização explícita.
-
-### 0.2.0 — denoising, Conv1D e LSTM autoencoders
-
-- ✅ `AutoencDenoiseE/Ed`;
-- 🔜 `AutoencConvE/Ed`, depois `AutoencLstmE/Ed`;
-- migrar os wrappers R e eliminar os três backends embarcados correspondentes;
-- exemplos e paridade no mesmo marco.
 
 ### 0.3.0 — stacked, VAE e AAE
 

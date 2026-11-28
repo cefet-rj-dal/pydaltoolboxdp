@@ -5,12 +5,15 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.1.0 validado localmente. `AutoencE/AutoencEd`, exemplos, referência congelada e ponte
-R estão prontos; os dois gates deram paridade exata a `1e-7`, e `inst/python/autoenc.py` foi
-removido. `AutoencDenoiseE/Ed` também estão migrados, com exemplos e paridade exata; o backend
-`autoenc_denoise.py` foi removido. Próximo corte: `AutoencConvE/Ed` (0.2.0), repetindo legado↔novo, Python↔R,
-resultado científico, exemplos e remoção do backend somente ao final. O `R CMD check` atual tem
+Estado: 0.2.0 publicado no PyPI e reinstalado localmente. `AutoencE/Ed`, `AutoencDenoiseE/Ed`,
+`AutoencConvE/Ed` e `AutoencLstmE/Ed` estão migrados, com exemplos, referências congeladas e
+pontes R. Os gates deram paridade exata a `1e-7` (Conv1D e LSTM foram bit a bit no gate legado),
+e seus quatro backends embarcados foram removidos. Próximo corte: `AutoencStackedE/Ed` (0.3.0), repetindo legado↔novo,
+Python↔R, resultado científico, exemplos e remoção do backend somente ao final. O `R CMD check` atual tem
 um warning preexistente de `.Rd` das famílias ainda não migradas. Não tocar harbinger/pyharbinger
 sem ler e atualizar sua memória ativa; eles estão no meio de outro ciclo.
 
-Não publicar, commitar ou fazer push sem autorização explícita do Eduardo.
+Os exemplos Conv1D e LSTM R/Python estão alinhados em arquitetura, seed, épocas, batch e
+métricas. O planejamento contém apenas
+trabalho pendente; toda conclusão vai para o histórico. Não fazer novas publicações, commits ou push sem
+autorização explícita do Eduardo.

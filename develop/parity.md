@@ -34,7 +34,15 @@ reduções podem variar. Toda tolerância deve vir acompanhada de evidência.
 | `autoenc_ed` → `AutoencEd` | exato (`1e-7`) | exato (`1e-7`) | reconstrução, MSE e seed | `test_autoencoder.py`, `test_quality_dense.py` |
 | `autoenc_denoise_e` → `AutoencDenoiseE` | exato (`1e-7`) | exato (`1e-7`) | latente limpo após treino ruidoso | `test_quality_denoise.py` |
 | `autoenc_denoise_ed` → `AutoencDenoiseEd` | exato (`1e-7`) | exato (`1e-7`) | reconstrução limpa e seed | `test_quality_denoise.py` |
+| `autoenc_conv_e` → `AutoencConvE` | bit a bit (`0.0`) | exato (`1e-7`) | latente, forma e seed | `test_quality_conv.py` |
+| `autoenc_conv_ed` → `AutoencConvEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução, forma e seed | `test_quality_conv.py` |
+| `autoenc_lstm_e` → `AutoencLstmE` | bit a bit (`0.0`) | exato (`1e-7`) | latente temporal, forma e seed | `test_quality_lstm.py` |
+| `autoenc_lstm_ed` → `AutoencLstmEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução temporal e MSE | `test_quality_lstm.py` |
 
 O backend denso foi apagado somente depois que os gates 1 e 2 ficaram verdes. A referência
 legada permanece congelada em `develop/parity/dense_ref.json`, e a ponte é exercitada por
 `daltoolboxdp/develop/parity/dense_reticulate.R`.
+
+As referências das famílias seguintes estão em `develop/parity/denoise_ref.json` e
+`develop/parity/conv_ref.json` e `develop/parity/lstm_ref.json`; seus gates R ficam nos scripts homônimos sob
+`daltoolboxdp/develop/parity`.
