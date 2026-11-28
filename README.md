@@ -25,7 +25,7 @@ dense, denoising, convolutional, and LSTM autoencoder families:
 Install the published package from PyPI:
 
 ```bash
-python -m pip install pydaltoolboxdp==0.1.0
+python -m pip install pydaltoolboxdp
 ```
 
 Development installation from this checkout:

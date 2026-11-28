@@ -73,3 +73,6 @@
   publicados no PyPI com autorização explícita.
 - A wheel pública foi reinstalada sem cache e o smoke test confirmou versão 0.2.0 e
   reconstrução LSTM `(6, 5)` a partir de `site-packages`.
+- Como a descrição publicada da 0.2.0 ainda fixava o comando de instalação em 0.1.0,
+  a instrução foi tornada não versionada e a correção documental 0.2.1 foi publicada e
+  reinstalada a partir do índice público.

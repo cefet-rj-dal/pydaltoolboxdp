@@ -8,6 +8,8 @@ Nenhuma publicação ocorre sem autorização explícita do Eduardo.
   passaram por `twine check`, instalação sem cache e smoke test local.
 - `0.2.0` — publicada no PyPI em 2026-11-27 com autorização explícita; wheel e sdist
   passaram por `twine check`, reinstalação pública sem cache e smoke test LSTM local.
+- `0.2.1` — correção da instrução de instalação exibida no PyPI, sem mudança de API;
+  publicada e reinstalada sem cache em 2026-11-27.
 
 Checklist por release:
 

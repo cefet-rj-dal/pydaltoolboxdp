@@ -5,7 +5,7 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.2.0 publicado no PyPI e reinstalado localmente. `AutoencE/Ed`, `AutoencDenoiseE/Ed`,
+Estado: 0.2.1 publicado no PyPI e reinstalado localmente; corrige o metadado de instalação da 0.2.0. `AutoencE/Ed`, `AutoencDenoiseE/Ed`,
 `AutoencConvE/Ed` e `AutoencLstmE/Ed` estão migrados, com exemplos, referências congeladas e
 pontes R. Os gates deram paridade exata a `1e-7` (Conv1D e LSTM foram bit a bit no gate legado),
 e seus quatro backends embarcados foram removidos. Próximo corte: `AutoencStackedE/Ed` (0.3.0), repetindo legado↔novo,
