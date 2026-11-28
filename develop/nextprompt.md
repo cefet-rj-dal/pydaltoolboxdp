@@ -5,7 +5,7 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.3.0 publicado no PyPI e reinstalado sem cache a partir da distribuição pública.
+Estado: 0.3.1 publicado no PyPI e reinstalado sem cache a partir da distribuição pública.
 As 14 classes das sete famílias de autoencoders estão migradas, com exemplos, referências
 congeladas e pontes R. Os gates deram paridade exata a `1e-7` e os sete backends embarcados
 foram removidos. Próximo corte: classificação e regressão 0.4.0, começando por `SkclaGb`,

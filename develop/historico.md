@@ -102,3 +102,5 @@
   batch e métricas MSE/R² idênticos.
 - Publicados wheel e sdist 0.3.0 no PyPI com autorização explícita; a wheel pública foi
   reinstalada sem cache e os smoke tests confirmaram VAE e AAE com saída `(6, 4)`.
+- Como a descrição empacotada da 0.3.0 ainda marcava 0.3.x como local, a correção documental
+  0.3.1 foi publicada e reinstalada da wheel pública, mantendo os mesmos smoke tests verdes.
