@@ -22,14 +22,14 @@ Legenda: ✅ implementado · 🔜 próximo · ⬜ planejado · 🗑 redundante/r
 
 | R | Python | Base | Status |
 |---|---|---|---|
-| `skcla_gb` | `SkclaGb` | `Classification` | ⬜ 0.4.0 — permanece: não há equivalente no base |
-| `torch_cla_mlp` | `TorchClaMlp` | `Classification` | ⬜ 0.4.0 |
-| `torch_reg_mlp` | `TorchRegMlp` | `Regression` | ⬜ 0.4.0 |
-| `skcla_knn` | `ClaKnn` (pydaltoolbox) | — | 🗑 redundante |
-| `skcla_nb` | `ClaNb` (pydaltoolbox) | — | 🗑 redundante |
-| `skcla_svc` | `ClaSvm` (pydaltoolbox) | — | 🗑 redundante |
-| `skcla_rf` | `ClaRf` (pydaltoolbox) | — | 🗑 redundante |
-| `skcla_mlp` | `ClaMlp` (pydaltoolbox) | — | 🗑 redundante |
+| `skcla_gb` | `SkclaGb` | `Classification` | ✅ 0.4.0 local (ponte R e paridade) |
+| `torch_cla_mlp` | `TorchClaMlp` | `Classification` | ✅ 0.4.0 local (ponte R e paridade) |
+| `torch_reg_mlp` | `TorchRegMlp` | `Regression` | ✅ 0.4.0 local (ponte R e paridade) |
+| `skcla_knn` | `ClaKnn` (pydaltoolbox) | — | 🗑 removido do DP em 0.4.0 |
+| `skcla_nb` | `ClaNb` (pydaltoolbox) | — | 🗑 removido do DP em 0.4.0 |
+| `skcla_svc` | `ClaSvm` (pydaltoolbox) | — | 🗑 removido do DP em 0.4.0 |
+| `skcla_rf` | `ClaRf` (pydaltoolbox) | — | 🗑 removido do DP em 0.4.0 |
+| `skcla_mlp` | `ClaMlp` (pydaltoolbox) | — | 🗑 removido do DP em 0.4.0 |
 
 ## Séries temporais (`pytspredit`)
 

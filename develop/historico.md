@@ -104,3 +104,25 @@
   reinstalada sem cache e os smoke tests confirmaram VAE e AAE com saída `(6, 4)`.
 - Como a descrição empacotada da 0.3.0 ainda marcava 0.3.x como local, a correção documental
   0.3.1 foi publicada e reinstalada da wheel pública, mantendo os mesmos smoke tests verdes.
+
+## Classificação e regressão — 0.4.0 local (2026-11-27)
+
+- Implementados `SkclaGb`, `TorchClaMlp` e `TorchRegMlp` sobre os contratos
+  `Classification`/`Regression` de pydaltoolbox, com CPU por padrão, seed opcional,
+  probabilidades ordenadas e históricos de treino/validação.
+- Os gates legado→novo foram bit a bit para probabilidades, decisões, loss e regressão;
+  os três adaptadores R→Python foram exatos a `1e-7`.
+- Congelada a referência em `develop/parity/supervised_ref.json`, adicionadas guardas de
+  contrato, reprodutibilidade, early stopping e qualidade, e removidos os três backends
+  embarcados somente após os gates verdes.
+- Criados, executados e renderizados exemplos Python para Gradient Boosting, MLP de
+  classificação e MLP de regressão; os exemplos R concretos permanecem no daltoolboxdp.
+- Removidos de daltoolboxdp os APIs redundantes `skcla_knn/nb/svc/rf/mlp`, seus backends,
+  documentação e exemplos; os equivalentes vivem em daltoolbox/pydaltoolbox.
+- A auditoria confirmou que `skimb_smote`, `skimb_smote_tomek` e `skimb_tomek_links` não
+  tinham API pública nem consumidores; os scripts órfãos foram removidos, assim como o
+  helper `autoenc_common.py` já sem consumidores.
+- `ruff` passou, o pytest terminou com 38 testes, sdist/wheel 0.4.0 passaram por
+  `twine check`, e `R CMD check` concluiu com apenas o warning preexistente das assinaturas
+  `.Rd` das três famílias de séries temporais previstas para 0.5.0.
+- Não houve publicação, commit ou push.

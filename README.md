@@ -8,8 +8,8 @@ The sibling R package, `daltoolboxdp`, is a thin `reticulate` interface to these
 classes. Python algorithms live here once; they are not duplicated inside the R
 package.
 
-The first complete vertical slice contains all seven encoder and encoder-decoder
-autoencoder families:
+The implemented vertical slices contain all seven encoder and encoder-decoder
+autoencoder families plus tabular classification and regression:
 
 - `AutoencE`: transforms observations into their latent representation;
 - `AutoencEd`: reconstructs observations after encoding.
@@ -23,6 +23,9 @@ autoencoder families:
 - `AutoencStackedEd`: reconstructs observations through the reversed decoder stack.
 - `AutoencVariationalE/Ed`: learns a probabilistic latent space and reconstruction;
 - `AutoencAdvE/Ed`: matches latent codes to a prior through adversarial training.
+- `SkclaGb`: gradient-boosted decision-tree classification;
+- `TorchClaMlp`: configurable PyTorch MLP classification;
+- `TorchRegMlp`: configurable PyTorch MLP regression.
 
 ## Installation
 
@@ -55,3 +58,4 @@ extension layer. GPU use is optional; models run on CPU by default.
 | 0.1.x | 1.3.767 or newer | dense, denoising, and Conv1D autoencoders |
 | 0.2.x | development checkout | adds LSTM autoencoders |
 | 0.3.x | development checkout | completes all 14 autoencoder classes |
+| 0.4.x | development checkout | adds tabular classification and regression |

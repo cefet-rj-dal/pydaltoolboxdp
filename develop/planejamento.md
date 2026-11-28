@@ -5,14 +5,6 @@ correspondência R↔Python fica em `mapeamento.md`; o protocolo de validação,
 
 ## Roadmap incremental
 
-### 0.4.0 — classificação e regressão
-
-- `SkclaGb`, `TorchClaMlp`, `TorchRegMlp`;
-- manter `skcla_gb` no R porque não existe em pydaltoolbox;
-- remover de daltoolboxdp os redundantes `skcla_knn/nb/svc/rf/mlp`, seus backends e
-  exemplos, usando as classes de daltoolbox/pydaltoolbox;
-- remover os scripts `skimb_*` órfãos, se a auditoria confirmar ausência de API pública.
-
 ### 0.5.0 — séries temporais
 
 - `TorchTsMlp`, `TsConv1D`, `TsLstm`, todos sobre `pytspredit.TsRegSW`;

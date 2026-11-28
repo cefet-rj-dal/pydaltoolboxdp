@@ -2,6 +2,11 @@
 
 Nenhuma publicação ocorre sem autorização explícita do Eduardo.
 
+## Artefatos locais
+
+- `0.4.0` — classificação/regressão concluídas localmente; wheel e sdist passaram por
+  `twine check`. Não publicada.
+
 ## Publicações
 
 - `0.1.0` — publicada no PyPI em 2026-11-27 com autorização explícita; wheel e sdist

@@ -44,6 +44,9 @@ reduções podem variar. Toda tolerância deve vir acompanhada de evidência.
 | `autoenc_variational_ed` → `AutoencVariationalEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução estocástica, MSE e seed | `test_quality_variational.py` |
 | `autoenc_adv_e` → `AutoencAdvE` | bit a bit (`0.0`) | exato (`1e-7`) | latente adversarial, forma e seed | `test_quality_adv.py` |
 | `autoenc_adv_ed` → `AutoencAdvEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução adversarial e MSE | `test_quality_adv.py` |
+| `skcla_gb` → `SkclaGb` | bit a bit (`0.0`) | exato (`1e-7`) | ordem de classes, probabilidades e decisão | `test_quality_supervised.py` |
+| `torch_cla_mlp` → `TorchClaMlp` | bit a bit (`0.0`) | exato (`1e-7`) | loss, probabilidades, decisão e seed | `test_supervised.py`, `test_quality_supervised.py` |
+| `torch_reg_mlp` → `TorchRegMlp` | bit a bit (`0.0`) | exato (`1e-7`) | loss, vetor previsto, métricas e seed | `test_supervised.py`, `test_quality_supervised.py` |
 
 O backend denso foi apagado somente depois que os gates 1 e 2 ficaram verdes. A referência
 legada permanece congelada em `develop/parity/dense_ref.json`, e a ponte é exercitada por
@@ -54,3 +57,6 @@ As referências das famílias seguintes estão em `develop/parity/denoise_ref.js
 `develop/parity/stacked_ref.json`, `develop/parity/variational_ref.json` e
 `develop/parity/adv_ref.json`; seus gates R ficam nos scripts homônimos sob
 `daltoolboxdp/develop/parity`.
+
+A referência da classificação/regressão está em `develop/parity/supervised_ref.json`;
+o gate R conjunto está em `daltoolboxdp/develop/parity/supervised_reticulate.R`.

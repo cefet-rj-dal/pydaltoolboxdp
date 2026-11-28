@@ -5,14 +5,16 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.3.1 publicado no PyPI e reinstalado sem cache a partir da distribuição pública.
-As 14 classes das sete famílias de autoencoders estão migradas, com exemplos, referências
-congeladas e pontes R. Os gates deram paridade exata a `1e-7` e os sete backends embarcados
-foram removidos. Próximo corte: classificação e regressão 0.4.0, começando por `SkclaGb`,
-`TorchClaMlp` e `TorchRegMlp`. Não tocar harbinger/pyharbinger
-sem ler e atualizar sua memória ativa; eles estão no meio de outro ciclo.
+Estado: 0.4.0 está concluído e validado apenas localmente, sem publicação. As três classes
+tabulares (`SkclaGb`, `TorchClaMlp`, `TorchRegMlp`) têm exemplos, referências congeladas e
+pontes R; os gates foram bit a bit no legado e exatos a `1e-7` via reticulate. Os cinco
+classificadores redundantes e os scripts `skimb_*` órfãos foram removidos do daltoolboxdp.
+Próximo corte: séries temporais 0.5.0, começando por `TorchTsMlp`, `TsConv1D` e `TsLstm`
+sobre `pytspredit.TsRegSW`, incluindo one-step/multi-step e consolidação dos exemplos.
+Não tocar harbinger/pyharbinger sem ler e atualizar sua memória ativa; eles estão no meio
+de outro ciclo.
 
-Todos os exemplos de autoencoder R/Python estão alinhados em arquitetura, seed, épocas, batch e
-métricas. O planejamento contém apenas
-trabalho pendente; toda conclusão vai para o histórico. Não fazer novas publicações, commits ou push sem
-autorização explícita do Eduardo.
+O `R CMD check` atual tem apenas o warning preexistente de assinaturas `.Rd` das três
+famílias de séries temporais; corrigir junto da migração 0.5.0. O planejamento contém apenas
+trabalho pendente; toda conclusão vai para o histórico. Não fazer novas publicações,
+commits ou push sem autorização explícita do Eduardo.

@@ -9,6 +9,7 @@ from .autoencoder import AutoencDenoiseE, AutoencDenoiseEd, AutoencE, AutoencEd
 from .convolutional import AutoencConvE, AutoencConvEd
 from .recurrent import AutoencLstmE, AutoencLstmEd
 from .stacked import AutoencStackedE, AutoencStackedEd
+from .supervised import SkclaGb, TorchClaMlp, TorchRegMlp
 from .variational import AutoencVariationalE, AutoencVariationalEd
 
 __all__ = [
@@ -26,5 +27,8 @@ __all__ = [
     "AutoencStackedEd",
     "AutoencVariationalE",
     "AutoencVariationalEd",
+    "SkclaGb",
+    "TorchClaMlp",
+    "TorchRegMlp",
 ]
-__version__ = "0.3.1"
+__version__ = "0.4.0"
