@@ -10,6 +10,9 @@ Nenhuma publicação ocorre sem autorização explícita do Eduardo.
   passaram por `twine check`, reinstalação pública sem cache e smoke test LSTM local.
 - `0.2.1` — correção da instrução de instalação exibida no PyPI, sem mudança de API;
   publicada e reinstalada sem cache em 2026-11-27.
+- `0.3.0` — conclui as 14 classes de autoencoder; wheel e sdist passaram por `twine check`,
+  foram publicados com autorização explícita e a wheel pública foi reinstalada sem cache
+  com smoke tests VAE e AAE em 2026-11-27.
 
 Checklist por release:
 

@@ -54,4 +54,4 @@ extension layer. GPU use is optional; models run on CPU by default.
 |---|---|---|
 | 0.1.x | 1.3.767 or newer | dense, denoising, and Conv1D autoencoders |
 | 0.2.x | development checkout | adds LSTM autoencoders |
-| 0.3.x (local) | development checkout | completes all 14 autoencoder classes |
+| 0.3.x | development checkout | completes all 14 autoencoder classes |

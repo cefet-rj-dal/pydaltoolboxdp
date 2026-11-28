@@ -14,9 +14,9 @@ Legenda: ✅ implementado · 🔜 próximo · ⬜ planejado · 🗑 redundante/r
 | `autoenc_denoise_e/ed` | `AutoencDenoiseE/Ed` | `AutoencBaseE/Ed` | ✅ 0.1.0 (ponte R e paridade) |
 | `autoenc_conv_e/ed` | `AutoencConvE/Ed` | `AutoencBaseE/Ed` | ✅ 0.1.0 (ponte R e paridade) |
 | `autoenc_lstm_e/ed` | `AutoencLstmE/Ed` | `AutoencBaseE/Ed` | ✅ 0.2.0 local (ponte R e paridade) |
-| `autoenc_stacked_e/ed` | `AutoencStackedE/Ed` | `AutoencBaseE/Ed` | ✅ 0.3.0 local (ponte R e paridade) |
-| `autoenc_variational_e/ed` | `AutoencVariationalE/Ed` | `AutoencBaseE/Ed` | ✅ 0.3.0 local (ponte R e paridade) |
-| `autoenc_adv_e/ed` | `AutoencAdvE/Ed` | `AutoencBaseE/Ed` | ✅ 0.3.0 local (ponte R e paridade) |
+| `autoenc_stacked_e/ed` | `AutoencStackedE/Ed` | `AutoencBaseE/Ed` | ✅ 0.3.0 (ponte R e paridade) |
+| `autoenc_variational_e/ed` | `AutoencVariationalE/Ed` | `AutoencBaseE/Ed` | ✅ 0.3.0 (ponte R e paridade) |
+| `autoenc_adv_e/ed` | `AutoencAdvE/Ed` | `AutoencBaseE/Ed` | ✅ 0.3.0 (ponte R e paridade) |
 
 ## Classificação e regressão (`pydaltoolbox`)
 

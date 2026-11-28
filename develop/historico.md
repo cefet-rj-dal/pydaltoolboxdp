@@ -90,7 +90,7 @@
 - `ruff` passou, o pytest terminou com 23 testes, sdist/wheel passaram por `twine check` e
   o smoke test da wheel local confirmou reconstrução Stacked `(6, 4)`.
 
-## VAE, AAE e fechamento dos autoencoders — 0.3.0 local (2026-11-27)
+## VAE, AAE e fechamento dos autoencoders — 0.3.0 (2026-11-27)
 
 - Implementados `AutoencVariationalE/Ed` e `AutoencAdvE/Ed`, fechando as 14 classes das
   sete famílias de autoencoders Deep ++.
@@ -99,4 +99,6 @@
 - Congeladas referências para VAE e AAE, adicionadas guardas de contrato, seed e qualidade,
   e removidos os dois backends embarcados somente após os gates verdes.
 - Alinhados e executados os exemplos R/Python 06/16 e 07/17 com arquitetura, seed, épocas,
-  batch e métricas MSE/R² idênticos. A versão 0.3.0 permaneceu somente local.
+  batch e métricas MSE/R² idênticos.
+- Publicados wheel e sdist 0.3.0 no PyPI com autorização explícita; a wheel pública foi
+  reinstalada sem cache e os smoke tests confirmaram VAE e AAE com saída `(6, 4)`.
