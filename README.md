@@ -63,4 +63,4 @@ extension layer. GPU use is optional; models run on CPU by default.
 | 0.2.x | development checkout | adds LSTM autoencoders |
 | 0.3.x | development checkout | completes all 14 autoencoder classes |
 | 0.4.x | development checkout | adds tabular classification and regression |
-| 0.5.x | development checkout | adds one-step and multi-step time-series forecasting |
+| 0.5.x | 1.3.767 from GitHub `main` | adds one-step and multi-step time-series forecasting |

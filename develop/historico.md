@@ -129,7 +129,7 @@
   foi reinstalada sem cache em `site-packages`, o smoke test confirmou `SkclaGb` e o gate
   R/reticulate permaneceu exato a `1e-7` sem usar a árvore-fonte.
 
-## Séries temporais — 0.5.0 local (2026-11-28)
+## Séries temporais e publicação — 0.5.0 (2026-11-28)
 
 - Implementados `TorchTsMlp`, `TsConv1D` e `TsLstm` sobre `pytspredit.TsRegSW`, preservando
   arquiteturas, validação, critérios de parada e históricos do legado em CPU.
@@ -145,4 +145,9 @@
 - Corrigidas as assinaturas `.Rd` das três famílias e atualizado o requisito reticulate para
   `pydaltoolboxdp>=0.5.0`. `ruff` e os 49 testes passaram; wheel/sdist passaram por
   `twine check`, a wheel local passou no smoke test isolado e `R CMD check` terminou OK.
-  O corte permanece local, sem publicação, commit ou push.
+- Com autorização explícita, os três repositórios foram atualizados após `pull --rebase`:
+  pydaltoolboxdp recebeu as classes, daltoolboxdp os adaptadores/exemplos e tspredit perdeu
+  os exemplos duplicados. Wheel e sdist foram publicados no PyPI.
+- A wheel pública 0.5.0 foi instalada sem cache em venv novo e os três modelos produziram
+  previsões finitas. O daltoolboxdp foi instalado de `GitHub/main` em biblioteca R isolada e
+  executou `torch_ts_mlp` via reticulate contra o pacote Python público.

@@ -5,7 +5,7 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.4.0 está publicado no PyPI. O corte 0.5.0 está concluído apenas localmente, com
+Estado: 0.5.0 está publicado no PyPI, com
 `TorchTsMlp`, `TsConv1D` e `TsLstm` sobre `pytspredit.TsRegSW`, previsão one-step e
 multi-step, referências congeladas, exemplos Python/R e pontes reticulate exatas a `1e-7`.
 Os três backends embarcados foram removidos do daltoolboxdp; os exemplos Deep ++ saíram do
@@ -17,4 +17,4 @@ em outro ciclo. Implementar `HanAutoencoder` e `HcpWaypoint` sobre `pyharbinger.
 e transferir os 12 exemplos Deep ++ previstos no planejamento.
 
 O planejamento contém apenas trabalho pendente; toda conclusão vai para o histórico. Não
-publicar 0.5.0, nem fazer commits ou push, sem nova autorização explícita do Eduardo.
+fazer novas publicações, commits ou push sem autorização explícita do Eduardo.
