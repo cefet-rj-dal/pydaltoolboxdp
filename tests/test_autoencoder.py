@@ -1,8 +1,11 @@
 import numpy as np
 import pytest
+import torch
 from pydaltoolbox import AutoencBaseE, AutoencBaseEd
 
 from pydaltoolboxdp import (
+    AutoencAdvE,
+    AutoencAdvEd,
     AutoencConvE,
     AutoencConvEd,
     AutoencDenoiseE,
@@ -11,6 +14,10 @@ from pydaltoolboxdp import (
     AutoencEd,
     AutoencLstmE,
     AutoencLstmEd,
+    AutoencStackedE,
+    AutoencStackedEd,
+    AutoencVariationalE,
+    AutoencVariationalEd,
 )
 
 
@@ -165,3 +172,100 @@ def test_lstm_reconstruction_is_seeded(data):
 def test_lstm_sequence_length_must_divide_input_size():
     with pytest.raises(ValueError, match="divisible"):
         AutoencLstmE(5, 2, sequence_length=2)
+
+
+def test_stacked_encoder_implements_contract(data):
+    model = AutoencStackedE(
+        4, 2, encoding_sizes=[3, 2], encoder_hidden_sizes=[5],
+        epochs=2, batch_size=6, random_state=61,
+    ).fit(data)
+
+    assert isinstance(model, AutoencBaseE)
+    assert model.transform(data).shape == (24, 2)
+    assert model.epochs_done_ == 4
+
+
+def test_stacked_reconstruction_is_seeded(data):
+    options = {
+        "encoding_sizes": [3, 2],
+        "encoder_hidden_sizes": [5],
+        "epochs": 2,
+        "batch_size": 6,
+        "random_state": 67,
+    }
+    first = AutoencStackedEd(4, 2, **options).fit(data)
+    second = AutoencStackedEd(4, 2, **options).fit(data)
+
+    assert isinstance(first, AutoencBaseEd)
+    assert first.transform(data).shape == data.shape
+    np.testing.assert_allclose(first.transform(data), second.transform(data), atol=1e-7)
+    np.testing.assert_allclose(first.train_loss_, second.train_loss_, atol=1e-7)
+
+
+def test_stacked_stage_specific_parameters_must_match_stage_count():
+    with pytest.raises(ValueError, match="match the number of stages"):
+        AutoencStackedE(
+            4,
+            2,
+            encoding_sizes=[3, 2],
+            encoder_hidden_sizes=[[5]],
+        )
+
+
+def test_variational_encoder_returns_distribution_parameters(data):
+    bounded = 1 / (1 + np.exp(-data))
+    model = AutoencVariationalE(
+        4, 2, encoder_hidden_sizes=[5], decoder_hidden_sizes=[5],
+        epochs=2, batch_size=6, random_state=83,
+    ).fit(bounded)
+
+    assert isinstance(model, AutoencBaseE)
+    assert model.transform(bounded).shape == (24, 4)
+
+
+def test_variational_reconstruction_is_seeded(data):
+    bounded = 1 / (1 + np.exp(-data))
+    options = {
+        "encoder_hidden_sizes": [5], "decoder_hidden_sizes": [5],
+        "epochs": 2, "batch_size": 6, "random_state": 89,
+    }
+    first = AutoencVariationalEd(4, 2, **options).fit(bounded)
+    second = AutoencVariationalEd(4, 2, **options).fit(bounded)
+    torch.manual_seed(97)
+    first_result = first.transform(bounded)
+    torch.manual_seed(97)
+    second_result = second.transform(bounded)
+
+    assert isinstance(first, AutoencBaseEd)
+    np.testing.assert_allclose(first_result, second_result, atol=1e-7)
+    np.testing.assert_allclose(first.train_loss_, second.train_loss_, atol=1e-7)
+
+
+def test_variational_reconstruction_loss_is_validated():
+    with pytest.raises(ValueError, match="reconstruction_loss"):
+        AutoencVariationalE(4, 2, reconstruction_loss="mae")
+
+
+def test_adversarial_encoder_implements_contract(data):
+    bounded = 1 / (1 + np.exp(-data))
+    model = AutoencAdvE(
+        4, 2, encoder_hidden_sizes=[5], decoder_hidden_sizes=[5],
+        discriminator_hidden_sizes=[5], dropout=0.1,
+        epochs=2, batch_size=6, random_state=103,
+    ).fit(bounded)
+    assert isinstance(model, AutoencBaseE)
+    assert model.transform(bounded).shape == (24, 2)
+
+
+def test_adversarial_reconstruction_is_seeded(data):
+    bounded = 1 / (1 + np.exp(-data))
+    options = {
+        "encoder_hidden_sizes": [5], "decoder_hidden_sizes": [5],
+        "discriminator_hidden_sizes": [5], "dropout": 0.1,
+        "epochs": 2, "batch_size": 6, "random_state": 107,
+    }
+    first = AutoencAdvEd(4, 2, **options).fit(bounded)
+    second = AutoencAdvEd(4, 2, **options).fit(bounded)
+    assert isinstance(first, AutoencBaseEd)
+    np.testing.assert_allclose(first.transform(bounded), second.transform(bounded), atol=1e-7)
+    np.testing.assert_allclose(first.train_loss_, second.train_loss_, atol=1e-7)

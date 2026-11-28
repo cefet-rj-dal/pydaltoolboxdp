@@ -122,7 +122,12 @@ class StopController:
 
     @staticmethod
     def _clone_state(model: nn.Module) -> dict:
-        return {key: value.detach().clone() for key, value in model.state_dict().items()}
+        def clone(value):
+            if isinstance(value, dict):
+                return {key: clone(item) for key, item in value.items()}
+            return value.detach().clone()
+
+        return {key: clone(value) for key, value in model.state_dict().items()}
 
     def _h_improved(self) -> bool:
         if len(self.history) < 2 * self.test_window:

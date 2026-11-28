@@ -5,12 +5,6 @@ correspondência R↔Python fica em `mapeamento.md`; o protocolo de validação,
 
 ## Roadmap incremental
 
-### 0.3.0 — stacked, VAE e AAE
-
-- `AutoencStackedE/Ed`, `AutoencVariationalE/Ed`, `AutoencAdvE/Ed`;
-- gates de qualidade e seed para os métodos estocásticos;
-- fechar os 14 autoencoders.
-
 ### 0.4.0 — classificação e regressão
 
 - `SkclaGb`, `TorchClaMlp`, `TorchRegMlp`;

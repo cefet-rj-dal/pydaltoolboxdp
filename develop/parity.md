@@ -38,11 +38,19 @@ reduções podem variar. Toda tolerância deve vir acompanhada de evidência.
 | `autoenc_conv_ed` → `AutoencConvEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução, forma e seed | `test_quality_conv.py` |
 | `autoenc_lstm_e` → `AutoencLstmE` | bit a bit (`0.0`) | exato (`1e-7`) | latente temporal, forma e seed | `test_quality_lstm.py` |
 | `autoenc_lstm_ed` → `AutoencLstmEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução temporal e MSE | `test_quality_lstm.py` |
+| `autoenc_stacked_e` → `AutoencStackedE` | bit a bit (`0.0`) | exato (`1e-7`) | latente hierárquico, forma e seed | `test_quality_stacked.py` |
+| `autoenc_stacked_ed` → `AutoencStackedEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução reversa e MSE | `test_quality_stacked.py` |
+| `autoenc_variational_e` → `AutoencVariationalE` | bit a bit (`0.0`) | exato (`1e-7`) | parâmetros latentes e seed | `test_quality_variational.py` |
+| `autoenc_variational_ed` → `AutoencVariationalEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução estocástica, MSE e seed | `test_quality_variational.py` |
+| `autoenc_adv_e` → `AutoencAdvE` | bit a bit (`0.0`) | exato (`1e-7`) | latente adversarial, forma e seed | `test_quality_adv.py` |
+| `autoenc_adv_ed` → `AutoencAdvEd` | bit a bit (`0.0`) | exato (`1e-7`) | reconstrução adversarial e MSE | `test_quality_adv.py` |
 
 O backend denso foi apagado somente depois que os gates 1 e 2 ficaram verdes. A referência
 legada permanece congelada em `develop/parity/dense_ref.json`, e a ponte é exercitada por
 `daltoolboxdp/develop/parity/dense_reticulate.R`.
 
 As referências das famílias seguintes estão em `develop/parity/denoise_ref.json` e
-`develop/parity/conv_ref.json` e `develop/parity/lstm_ref.json`; seus gates R ficam nos scripts homônimos sob
+`develop/parity/conv_ref.json`, `develop/parity/lstm_ref.json`,
+`develop/parity/stacked_ref.json`, `develop/parity/variational_ref.json` e
+`develop/parity/adv_ref.json`; seus gates R ficam nos scripts homônimos sob
 `daltoolboxdp/develop/parity`.

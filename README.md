@@ -8,8 +8,8 @@ The sibling R package, `daltoolboxdp`, is a thin `reticulate` interface to these
 classes. Python algorithms live here once; they are not duplicated inside the R
 package.
 
-The project is in its initial porting phase. The implemented vertical slices are the
-dense, denoising, convolutional, and LSTM autoencoder families:
+The first complete vertical slice contains all seven encoder and encoder-decoder
+autoencoder families:
 
 - `AutoencE`: transforms observations into their latent representation;
 - `AutoencEd`: reconstructs observations after encoding.
@@ -19,6 +19,10 @@ dense, denoising, convolutional, and LSTM autoencoder families:
 - `AutoencConvEd`: reconstructs windows with a convolutional encoder-decoder.
 - `AutoencLstmE`: learns recurrent representations of temporal windows;
 - `AutoencLstmEd`: reconstructs windows with a recurrent encoder-decoder.
+- `AutoencStackedE`: learns hierarchical representations through greedy stages;
+- `AutoencStackedEd`: reconstructs observations through the reversed decoder stack.
+- `AutoencVariationalE/Ed`: learns a probabilistic latent space and reconstruction;
+- `AutoencAdvE/Ed`: matches latent codes to a prior through adversarial training.
 
 ## Installation
 
@@ -50,3 +54,4 @@ extension layer. GPU use is optional; models run on CPU by default.
 |---|---|---|
 | 0.1.x | 1.3.767 or newer | dense, denoising, and Conv1D autoencoders |
 | 0.2.x | development checkout | adds LSTM autoencoders |
+| 0.3.x (local) | development checkout | completes all 14 autoencoder classes |

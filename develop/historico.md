@@ -76,3 +76,27 @@
 - Como a descrição publicada da 0.2.0 ainda fixava o comando de instalação em 0.1.0,
   a instrução foi tornada não versionada e a correção documental 0.2.1 foi publicada e
   reinstalada a partir do índice público.
+
+## Stacked — 0.3.0 parcial (2026-11-27)
+
+- Implementados `AutoencStackedE/Ed` com treinamento guloso por estágio, larguras latentes
+  configuráveis, arquiteturas densas compartilhadas ou específicas e decodificação reversa.
+- Os gates legado↔novo foram bit a bit para loss, latente e reconstrução; os adaptadores
+  Python↔R foram exatos a `1e-7` para encode e encode-decode.
+- Congelada a referência em `develop/parity/stacked_ref.json`, adicionados testes de contrato,
+  seed, configuração por estágio e qualidade, e removido `inst/python/autoenc_stacked.py`.
+- Alinhados e executados os exemplos R/Python 05/15 com seed, arquitetura, épocas, batch e
+  métricas idênticos. Não houve nova publicação.
+- `ruff` passou, o pytest terminou com 23 testes, sdist/wheel passaram por `twine check` e
+  o smoke test da wheel local confirmou reconstrução Stacked `(6, 4)`.
+
+## VAE, AAE e fechamento dos autoencoders — 0.3.0 local (2026-11-27)
+
+- Implementados `AutoencVariationalE/Ed` e `AutoencAdvE/Ed`, fechando as 14 classes das
+  sete famílias de autoencoders Deep ++.
+- Os gates legado↔novo foram bit a bit; os quatro adaptadores R foram exatos a `1e-7`,
+  inclusive com reinício explícito de seed nas transformações estocásticas do VAE.
+- Congeladas referências para VAE e AAE, adicionadas guardas de contrato, seed e qualidade,
+  e removidos os dois backends embarcados somente após os gates verdes.
+- Alinhados e executados os exemplos R/Python 06/16 e 07/17 com arquitetura, seed, épocas,
+  batch e métricas MSE/R² idênticos. A versão 0.3.0 permaneceu somente local.
