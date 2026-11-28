@@ -105,7 +105,7 @@
 - Como a descrição empacotada da 0.3.0 ainda marcava 0.3.x como local, a correção documental
   0.3.1 foi publicada e reinstalada da wheel pública, mantendo os mesmos smoke tests verdes.
 
-## Classificação e regressão — 0.4.0 local (2026-11-27)
+## Classificação e regressão — 0.4.0 (2026-11-27)
 
 - Implementados `SkclaGb`, `TorchClaMlp` e `TorchRegMlp` sobre os contratos
   `Classification`/`Regression` de pydaltoolbox, com CPU por padrão, seed opcional,
@@ -125,4 +125,6 @@
 - `ruff` passou, o pytest terminou com 38 testes, sdist/wheel 0.4.0 passaram por
   `twine check`, e `R CMD check` concluiu com apenas o warning preexistente das assinaturas
   `.Rd` das três famílias de séries temporais previstas para 0.5.0.
-- Não houve publicação, commit ou push.
+- Wheel e sdist 0.4.0 foram publicados no PyPI com autorização explícita; a wheel pública
+  foi reinstalada sem cache em `site-packages`, o smoke test confirmou `SkclaGb` e o gate
+  R/reticulate permaneceu exato a `1e-7` sem usar a árvore-fonte.

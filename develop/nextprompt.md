@@ -5,7 +5,8 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.4.0 está concluído e validado apenas localmente, sem publicação. As três classes
+Estado: 0.4.0 está publicado no PyPI e foi reinstalado sem cache da distribuição pública.
+As três classes
 tabulares (`SkclaGb`, `TorchClaMlp`, `TorchRegMlp`) têm exemplos, referências congeladas e
 pontes R; os gates foram bit a bit no legado e exatos a `1e-7` via reticulate. Os cinco
 classificadores redundantes e os scripts `skimb_*` órfãos foram removidos do daltoolboxdp.

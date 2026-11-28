@@ -2,11 +2,6 @@
 
 Nenhuma publicação ocorre sem autorização explícita do Eduardo.
 
-## Artefatos locais
-
-- `0.4.0` — classificação/regressão concluídas localmente; wheel e sdist passaram por
-  `twine check`. Não publicada.
-
 ## Publicações
 
 - `0.1.0` — publicada no PyPI em 2026-11-27 com autorização explícita; wheel e sdist
@@ -20,6 +15,10 @@ Nenhuma publicação ocorre sem autorização explícita do Eduardo.
   com smoke tests VAE e AAE em 2026-11-27.
 - `0.3.1` — corrige na descrição publicada a marcação residual de 0.3.x como local; wheel
   e sdist foram publicados e a wheel pública foi reinstalada sem cache em 2026-11-27.
+- `0.4.0` — adiciona classificação/regressão tabulares e conclui a remoção dos equivalentes
+  redundantes no pacote R; wheel e sdist passaram por `twine check`, foram publicados com
+  autorização explícita e a wheel pública foi reinstalada sem cache. O gate R/reticulate
+  contra `site-packages` permaneceu exato a `1e-7` em 2026-11-27.
 
 Checklist por release:
 
