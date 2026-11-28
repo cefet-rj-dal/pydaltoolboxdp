@@ -10,6 +10,7 @@ from .convolutional import AutoencConvE, AutoencConvEd
 from .recurrent import AutoencLstmE, AutoencLstmEd
 from .stacked import AutoencStackedE, AutoencStackedEd
 from .supervised import SkclaGb, TorchClaMlp, TorchRegMlp
+from .timeseries import TorchTsMlp, TsConv1D, TsLstm
 from .variational import AutoencVariationalE, AutoencVariationalEd
 
 __all__ = [
@@ -30,5 +31,8 @@ __all__ = [
     "SkclaGb",
     "TorchClaMlp",
     "TorchRegMlp",
+    "TorchTsMlp",
+    "TsConv1D",
+    "TsLstm",
 ]
-__version__ = "0.4.0"
+__version__ = "0.5.0"

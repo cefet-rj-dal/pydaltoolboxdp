@@ -20,6 +20,13 @@ Nenhuma publicação ocorre sem autorização explícita do Eduardo.
   autorização explícita e a wheel pública foi reinstalada sem cache. O gate R/reticulate
   contra `site-packages` permaneceu exato a `1e-7` em 2026-11-27.
 
+## Preparado localmente
+
+- `0.5.0` — adiciona `TorchTsMlp`, `TsConv1D` e `TsLstm`; wheel e sdist passaram por
+  `twine check`, e a wheel foi instalada em venv isolado com smoke test de treino e previsão
+  em 2026-11-28. O pacote R passou no gate reticulate e em `R CMD check` com status OK.
+  Não publicado: aguarda autorização explícita.
+
 Checklist por release:
 
 1. atualizar versão em `pyproject.toml` e `src/pydaltoolboxdp/__init__.py`;

@@ -5,14 +5,6 @@ correspondência R↔Python fica em `mapeamento.md`; o protocolo de validação,
 
 ## Roadmap incremental
 
-### 0.5.0 — séries temporais
-
-- `TorchTsMlp`, `TsConv1D`, `TsLstm`, todos sobre `pytspredit.TsRegSW`;
-- previsão one-step e multi-step;
-- transferir de tspredit os 3 exemplos de prediction e 3 de multivariate, consolidando
-  duplicatas já existentes no daltoolboxdp;
-- atualizar os plots para a propriedade atual de tspredit/pytspredit.
-
 ### 0.6.0 — harbinger deep
 
 - `HanAutoencoder` e `HcpWaypoint`, especializando `pyharbinger.Harbinger`;

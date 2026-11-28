@@ -128,3 +128,21 @@
 - Wheel e sdist 0.4.0 foram publicados no PyPI com autorização explícita; a wheel pública
   foi reinstalada sem cache em `site-packages`, o smoke test confirmou `SkclaGb` e o gate
   R/reticulate permaneceu exato a `1e-7` sem usar a árvore-fonte.
+
+## Séries temporais — 0.5.0 local (2026-11-28)
+
+- Implementados `TorchTsMlp`, `TsConv1D` e `TsLstm` sobre `pytspredit.TsRegSW`, preservando
+  arquiteturas, validação, critérios de parada e históricos do legado em CPU.
+- Cobertas previsões one-step e recursivas multi-step, reprodutibilidade, erros de reshape e
+  referências científicas congeladas em `develop/parity/timeseries_ref.json`.
+- MLP e LSTM foram bit a bit contra o legado; Conv1D diferiu no máximo um ULP (`5.96e-8`).
+  Os três adaptadores R/reticulate foram exatos a `1e-7` e só então os backends embarcados
+  foram removidos do daltoolboxdp.
+- Criados, executados e renderizados seis exemplos Python, cobrindo as três famílias em
+  previsão univariada e multivariada. Os seis exemplos Deep ++ foram retirados do tspredit;
+  os três univariados já estavam consolidados no daltoolboxdp e os três multivariados foram
+  transferidos para ele.
+- Corrigidas as assinaturas `.Rd` das três famílias e atualizado o requisito reticulate para
+  `pydaltoolboxdp>=0.5.0`. `ruff` e os 49 testes passaram; wheel/sdist passaram por
+  `twine check`, a wheel local passou no smoke test isolado e `R CMD check` terminou OK.
+  O corte permanece local, sem publicação, commit ou push.

@@ -47,6 +47,9 @@ reduções podem variar. Toda tolerância deve vir acompanhada de evidência.
 | `skcla_gb` → `SkclaGb` | bit a bit (`0.0`) | exato (`1e-7`) | ordem de classes, probabilidades e decisão | `test_quality_supervised.py` |
 | `torch_cla_mlp` → `TorchClaMlp` | bit a bit (`0.0`) | exato (`1e-7`) | loss, probabilidades, decisão e seed | `test_supervised.py`, `test_quality_supervised.py` |
 | `torch_reg_mlp` → `TorchRegMlp` | bit a bit (`0.0`) | exato (`1e-7`) | loss, vetor previsto, métricas e seed | `test_supervised.py`, `test_quality_supervised.py` |
+| `torch_ts_mlp` → `TorchTsMlp` | bit a bit (`0.0`) | exato (`1e-7`) | loss, one-step, multi-step e seed | `test_timeseries.py`, `test_quality_timeseries.py` |
+| `ts_conv1d` → `TsConv1D` | exato (`1e-7`) | exato (`1e-7`) | loss, one-step, multi-step e seed | `test_timeseries.py`, `test_quality_timeseries.py` |
+| `ts_lstm` → `TsLstm` | bit a bit (`0.0`) | exato (`1e-7`) | loss, one-step, multi-step e seed | `test_timeseries.py`, `test_quality_timeseries.py` |
 
 O backend denso foi apagado somente depois que os gates 1 e 2 ficaram verdes. A referência
 legada permanece congelada em `develop/parity/dense_ref.json`, e a ponte é exercitada por
@@ -60,3 +63,7 @@ As referências das famílias seguintes estão em `develop/parity/denoise_ref.js
 
 A referência da classificação/regressão está em `develop/parity/supervised_ref.json`;
 o gate R conjunto está em `daltoolboxdp/develop/parity/supervised_reticulate.R`.
+
+A referência das séries temporais está em `develop/parity/timeseries_ref.json`; o gate R
+conjunto está em `daltoolboxdp/develop/parity/timeseries_reticulate.R`. A diferença máxima
+do Conv1D legado foi um ULP (`5.96e-8`), dentro da tolerância exata adotada de `1e-7`.

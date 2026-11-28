@@ -9,7 +9,8 @@ classes. Python algorithms live here once; they are not duplicated inside the R
 package.
 
 The implemented vertical slices contain all seven encoder and encoder-decoder
-autoencoder families plus tabular classification and regression:
+autoencoder families, tabular classification and regression, and time-series
+forecasting:
 
 - `AutoencE`: transforms observations into their latent representation;
 - `AutoencEd`: reconstructs observations after encoding.
@@ -26,6 +27,9 @@ autoencoder families plus tabular classification and regression:
 - `SkclaGb`: gradient-boosted decision-tree classification;
 - `TorchClaMlp`: configurable PyTorch MLP classification;
 - `TorchRegMlp`: configurable PyTorch MLP regression.
+- `TorchTsMlp`: sliding-window time-series forecasting with a dense PyTorch MLP;
+- `TsConv1D`: sliding-window forecasting with one-dimensional convolutions;
+- `TsLstm`: sliding-window forecasting with recurrent LSTM layers.
 
 ## Installation
 
@@ -59,3 +63,4 @@ extension layer. GPU use is optional; models run on CPU by default.
 | 0.2.x | development checkout | adds LSTM autoencoders |
 | 0.3.x | development checkout | completes all 14 autoencoder classes |
 | 0.4.x | development checkout | adds tabular classification and regression |
+| 0.5.x | development checkout | adds one-step and multi-step time-series forecasting |

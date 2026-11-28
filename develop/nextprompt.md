@@ -5,17 +5,16 @@ Arquitetura travada: pydaltoolboxdp é a única implementação Python; daltoolb
 classes via reticulate e perderá `inst/python` família a família, somente após paridade.
 Exemplos concretos Deep ++ pertencem aos dois pacotes DP, não aos pacotes-base.
 
-Estado: 0.4.0 está publicado no PyPI e foi reinstalado sem cache da distribuição pública.
-As três classes
-tabulares (`SkclaGb`, `TorchClaMlp`, `TorchRegMlp`) têm exemplos, referências congeladas e
-pontes R; os gates foram bit a bit no legado e exatos a `1e-7` via reticulate. Os cinco
-classificadores redundantes e os scripts `skimb_*` órfãos foram removidos do daltoolboxdp.
-Próximo corte: séries temporais 0.5.0, começando por `TorchTsMlp`, `TsConv1D` e `TsLstm`
-sobre `pytspredit.TsRegSW`, incluindo one-step/multi-step e consolidação dos exemplos.
-Não tocar harbinger/pyharbinger sem ler e atualizar sua memória ativa; eles estão no meio
-de outro ciclo.
+Estado: 0.4.0 está publicado no PyPI. O corte 0.5.0 está concluído apenas localmente, com
+`TorchTsMlp`, `TsConv1D` e `TsLstm` sobre `pytspredit.TsRegSW`, previsão one-step e
+multi-step, referências congeladas, exemplos Python/R e pontes reticulate exatas a `1e-7`.
+Os três backends embarcados foram removidos do daltoolboxdp; os exemplos Deep ++ saíram do
+tspredit e foram consolidados nos dois pacotes DP.
 
-O `R CMD check` atual tem apenas o warning preexistente de assinaturas `.Rd` das três
-famílias de séries temporais; corrigir junto da migração 0.5.0. O planejamento contém apenas
-trabalho pendente; toda conclusão vai para o histórico. Não fazer novas publicações,
-commits ou push sem autorização explícita do Eduardo.
+Próximo corte: Harbinger Deep 0.6.0. Antes de qualquer edição, ler integralmente e depois
+atualizar a memória ativa de `harbinger` e `pyharbinger`, pois os repositórios podem estar
+em outro ciclo. Implementar `HanAutoencoder` e `HcpWaypoint` sobre `pyharbinger.Harbinger`
+e transferir os 12 exemplos Deep ++ previstos no planejamento.
+
+O planejamento contém apenas trabalho pendente; toda conclusão vai para o histórico. Não
+publicar 0.5.0, nem fazer commits ou push, sem nova autorização explícita do Eduardo.

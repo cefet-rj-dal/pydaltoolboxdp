@@ -35,9 +35,9 @@ Legenda: ✅ implementado · 🔜 próximo · ⬜ planejado · 🗑 redundante/r
 
 | R | Python | Base | Status |
 |---|---|---|---|
-| `torch_ts_mlp` | `TorchTsMlp` | `TsRegSW` | ⬜ 0.5.0 |
-| `ts_conv1d` | `TsConv1D` | `TsRegSW` | ⬜ 0.5.0 |
-| `ts_lstm` | `TsLstm` | `TsRegSW` | ⬜ 0.5.0 |
+| `torch_ts_mlp` | `TorchTsMlp` | `TsRegSW` | ✅ 0.5.0 local (ponte R e paridade) |
+| `ts_conv1d` | `TsConv1D` | `TsRegSW` | ✅ 0.5.0 local (ponte R e paridade) |
+| `ts_lstm` | `TsLstm` | `TsRegSW` | ✅ 0.5.0 local (ponte R e paridade) |
 
 ## Detecção de eventos (`pyharbinger`)
 
